@@ -20,7 +20,22 @@ function criarCobrinha(){
   }
 }
 
+document.addEventListener('keydown', update); // vai pegar o envento de clique do botão
+
+function update (event){
+  if(event.keyCode == 37 && directon != "right") directon = "left";
+  if(event.keyCode == 38 && directon != "down") directon = "up";
+  if(event.keyCode == 39 && directon != "left") directon = "right";
+  if(event.keyCode == 40 && directon != "up") directon = "down";
+   
+}
+
 function iniciarJogo(){
+
+  if(snake[0].x > 15 * box && directon == "right") snake[0].x  = 0; 
+  if(snake[0].x < 0 && directon == "left") snake[0].x  = 16 * box; 
+  if(snake[0].y < 15 * box && directon == "down") snake[0].y  = 0; 
+  if(snake[0].y < 0 && directon == "up") snake[0].y  = 16 * box; 
   criarBG();
   criarCobrinha();
 
