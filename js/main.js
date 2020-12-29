@@ -56,7 +56,7 @@ function iniciarJogo(){
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
-  //coordenadas
+  //coordenadas da cobrinha
 
   if(direction == "right") snakeX += box;
   if(direction == "left") snakeX -=box;
@@ -72,6 +72,5 @@ function iniciarJogo(){
 
   snake.unshift(newHead);
 }
-
 let jogo = setInterval(iniciarJogo, 100);
 
